@@ -56,7 +56,7 @@ def create_rfm_df(customers_order_info):
 
 
 
-all_df = pd.read_csv("dashboard/all_df.csv")
+all_df = pd.read_csv("C:\Users\Nila Mas'adah\OneDrive - Universitas Diponegoro\Dokumen\MBKM\Batch 7 (Bangkit)\proyek_analisis_data\dashboard\all_df.csv")
 
 datetime_columns = ["order_purchase_timestamp", "order_delivered_customer_date"]
 all_df.sort_values(by="order_purchase_timestamp", inplace=True)
@@ -73,7 +73,7 @@ max_date = all_df["order_purchase_timestamp"].max()
 
 
 with st.sidebar:
-    st.image("dashboard/e-commerce logo.png")
+    st.image("C:\Users\Nila Mas'adah\OneDrive - Universitas Diponegoro\Dokumen\MBKM\Batch 7 (Bangkit)\proyek_analisis_data\dashboard\e-commerce logo.png")
     
     start_date, end_date = st.date_input(
         label='Range Time', min_value=min_date,
