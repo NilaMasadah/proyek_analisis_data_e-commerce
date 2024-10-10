@@ -49,7 +49,7 @@ def create_rfm_df(customers_order_info):
     rfm.columns = ["customer_unique_id", "max_order_purchase_timestamp", "frequency", "monetary"]
     rfm["customer_unique_id"] = rfm["customer_unique_id"].apply(lambda x: x[-5:])
     rfm["max_order_purchase_timestamp"] = rfm["max_order_purchase_timestamp"].dt.date
-    recent_date = customers_order_info["order_purchase_timestamp"].dt.date.min()
+    recent_date = customers_order_info["order_purchase_timestamp"].dt.date.max()
     rfm["recency"] = rfm["max_order_purchase_timestamp"].apply(lambda x: (recent_date - x).days)
     rfm.drop("max_order_purchase_timestamp", axis=1, inplace=True)
     return rfm
